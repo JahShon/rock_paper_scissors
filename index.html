@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors </title>
+</head>
+
+<body>
+    <script>
+        function getComputerChoice() {
+            const choices = ['rock', 'paper', 'scissors'];
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+}
+
+        function determineWinner(userChoice, computerChoice) {
+            if (userChoice === computerChoice) {
+                return "It's a tie!";
+    }
+         if (
+            (userChoice === 'rock' && computerChoice === 'scissors') ||
+            (userChoice === 'paper' && computerChoice === 'rock') ||
+            (userChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+            return "You win!";
+    }
+            return "You lose!";
+}
+
+        function playGame() {
+             const userChoice = prompt("Enter rock, paper, or scissors:").toLowerCase();
+            const computerChoice = getComputerChoice();
+            console.log(`Computer chose: ${computerChoice}`);
+            const result = determineWinner(userChoice, computerChoice);
+            console.log(result);
+}
+
+playGame();
+    
+    
+    </script>
+</body>
+</html>
