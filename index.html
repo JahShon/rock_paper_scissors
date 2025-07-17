@@ -12,7 +12,7 @@
     <button onclick="playGame('paper')">Paper</button>
     <button onclick="playGame('scissors')">Scissors</button>
     <p id="result"></p>
-    
+
     <script>
         function getComputerChoice() {
             const choices = ['rock', 'paper', 'scissors'];
@@ -35,11 +35,9 @@
 }
 
         function playGame() {
-             const userChoice = prompt("Enter rock, paper, or scissors:").toLowerCase();
             const computerChoice = getComputerChoice();
-            console.log(`Computer chose: ${computerChoice}`);
             const result = determineWinner(userChoice, computerChoice);
-            console.log(result);
+            document.getElementById('result').innerText = `Computer chose ${computerChoice}. ${result}`;
 }
 
 playGame();
