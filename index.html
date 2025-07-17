@@ -34,7 +34,7 @@
             return "You lose!";
 }
 
-        function playGame() {
+        function playGame(userChoice) {
             const computerChoice = getComputerChoice();
             const result = determineWinner(userChoice, computerChoice);
             document.getElementById('result').innerText = `Computer chose ${computerChoice}. ${result}`;
